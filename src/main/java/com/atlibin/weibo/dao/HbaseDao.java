@@ -28,6 +28,7 @@ public class HbaseDao {
             NamespaceDescriptor namespaceDescriptor = admin.getNamespaceDescriptor("atweibo");
             admin.close();
         }catch (Exception e){
+            //如果不存在则创建
             NamespaceDescriptor namespaceDescriptor1= NamespaceDescriptor.create("atweibo")
                     .addConfiguration("creator","libin")
                     .addConfiguration("time",String.valueOf(System.currentTimeMillis()))
